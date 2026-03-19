@@ -1,5 +1,7 @@
 # PRJ-26001 · Galvanizing System PLC Controller
 
+![WebVisu Interface](images/WebVisu.png)
+
 ![Project](https://img.shields.io/badge/Project-PRJ--26001-0078D4?style=flat-square)
 ![PLC](https://img.shields.io/badge/PLC-WAGO%20CC100%20751--9402-009B77?style=flat-square)
 ![IDE](https://img.shields.io/badge/IDE-CODESYS%20V3.5-FF6C00?style=flat-square)
