@@ -69,19 +69,20 @@ The controller is built on a **WAGO CC100 (751-9402)** PLC programmed entirely i
 ## 2. Production Line Layout
 
 ```
-    [0]            [1]         [2]         [3]         [4]         [5]         [6]      [7]        [8]
-Start (Load)  > Acid Bath  > Washer 1  > Rinse 1  > Zink Bath  > Washer 2  > Rinse 2  > Dryer  > End (Unload)
+ [0]        [1]       [2]       [3]      [4]        [5]       [6]      [7]      [8]
+Start  > Acid Bath > Washer 1 > Rinse 1 > Zink Bath > Washer 2 > Rinse 2 > Dryer  > End
+(Load)     (HCl)      (Wash)    (Rinse)    (Zinc)      (Wash)    (Rinse)   (Dry)  (Unload)
 ```
 
 | Position  | Index | Description                     | Soak Time |
 |-----------|:-----:|---------------------------------|:---------:|
 | Start     | 0     | Load/input station (operator)   | n/a       |
-| Acid Bath | 1     | Primary zinc galvanizing bath   | 10 s      |
-| Washer 1  | 2     | First rinse station             | 10 s      |
-| Rinse 1   | 3     | Second rinse station            | 10 s      |
-| Zink Bath | 4     | Flux / secondary treatment bath | 10 s      |
-| Washer 2  | 5     | Third rinse station             | 10 s      |
-| Rinse 2   | 6     | Fourth rinse station            | 10 s      |
+| Acid Bath | 1     | HCl acid pickling bath          | 10 s      |
+| Washer 1  | 2     | First wash station              | 10 s      |
+| Rinse 1   | 3     | First rinse station             | 10 s      |
+| Zink Bath | 4     | Primary zinc galvanizing bath   | 10 s      |
+| Washer 2  | 5     | Second wash station             | 10 s      |
+| Rinse 2   | 6     | Second rinse station            | 10 s      |
 | Dryer     | 7     | Hot-air drying station          | 10 s      |
 | End       | 8     | Unload / completion position    | n/a       |
 
