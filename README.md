@@ -15,7 +15,7 @@ This is the PLC controller for a small-scale hot-dip galvanizing production line
 
 A single overhead hoist moves steel loads through eight process stations: an acid pickling bath, two wash/rinse pairs, a zinc bath, another wash/rinse pair, and a dryer. The controller handles all sequencing automatically, figures out which load to move next without deadlocking the line, and stops cleanly on an E-stop without losing its place.
 
-In theory (not implemented phisically), the hardware side uses a belt-driven Nema 17 stepper with an SL2690A driver for horizontal travel, and a GY-370 DC gear motor flipped by two Finder relays for vertical movement. Both axes are timer-based for now, with real encoder feedback planned for production.
+In theory (not implemented physically), the hardware side uses a belt-driven Nema 17 stepper with an SL2690A driver for horizontal travel, and a GY-370 DC gear motor flipped by two Finder relays for vertical movement. Both axes are timer-based for now, with real encoder feedback planned for production.
 
 On the software side, operators get a full WebVisu interface with per-station bath settings, configurable soak times, a live alarm system with upper and lower limits on all process parameters, and a Modbus TCP server for external SCADA access.
 
@@ -28,3 +28,13 @@ On the software side, operators get a full WebVisu interface with per-station ba
 | **Standard** | IEC 60204-1 |
 
 For the full technical reference including the GVL, state machine, Modbus register map, I/O channel assignments, and commissioning checklist, see [README-Detailed.md](README-Detailed.md).
+
+---
+ 
+## Author
+ 
+**Attila Peter Szucs**
+Cybersecurity student at Howest University of Applied Sciences, Brugge, Belgium.
+CODESYS / WAGO PLC programmer with a background in industrial automation and OT security.
+ 
+[GitHub](https://github.com/attilapeterszucs) · [LinkedIn](https://linkedin.com/in/attilapeterszucs)
