@@ -1,0 +1,75 @@
+1. Base Palette (The Industrial Standard)
+These are the foundation colors used across all visualizations. They mimic brushed metal, concrete, and safety standards.
+
+Role	Color Name	HEX	RGB	Usage
+Background	Dark Concrete	#1E1E1E	(30,30,30)	Main background for all screens. Reduces eye strain and hides dirt/grime in the context of the plant.
+Surface	Machine Gray	#2D2D2D	(45,45,45)	Panels, group boxes, and static elements.
+Surface (Elevated)	Aluminum	#3C3C3C	(60,60,60)	Input fields, active tabs, toolbars.
+Stroke	Structural Steel	#5A5A5A	(90,90,90)	Borders, separators, and dividers.
+Text (Primary)	White	#FFFFFF	(255,255,255)	Labels, values, primary text.
+Text (Secondary)	Safety Orange	#FFA500	(255,165,0)	Warning texts, unacknowledged alarms, or critical value highlights (sparingly).
+2. Main Menu Palette (Navigation & Hierarchy)
+The main menu must be intuitive. Use color to indicate active states and sections without being distracting.
+
+Element	Color Name	HEX	RGB	Description
+Top Bar	Corporate Blue	#0066B3	(0,102,179)	The header. Represents trust and control. Matches many industrial OEM standards.
+Menu Button (Idle)	Zinc Gray	#4A4A4A	(74,74,74)	Standard navigation buttons.
+Menu Button (Hover)	Slate	#5F5F5F	(95,95,95)	Visual feedback for mouse/touch interaction.
+Menu Button (Active)	Safety Yellow	#E6B422	(230,180,34)	Indicates which screen you are currently on. Do not use red or green here to avoid confusion with machine status.
+Logout/E-Stop	Signal Red	#CC3300	(204,51,0)	Emergency stop simulation or logout button (high visibility).
+3. Control & Monitor Visualization (Process & Status)
+This is the core of your HMI. Colors here must adhere to ISO 13849 and IEC 60073 standards for consistency with physical pushbuttons.
+
+A. Machine States (Motion & Position)
+State	Color	HEX	Usage
+Running / On	Signal Green	#00A651	Motor running, conveyor moving, valve open (active), system enabled.
+Stopped / Off	Dark Gray	#6F6F6F	Motor stopped, valve closed, inactive state. Never use green for stopped.
+Fault / Error	Signal Red	#E30613	Motor tripped, emergency stop, bath temperature too high/low, communication loss.
+Warning / Limit	Signal Yellow	#FFD100	Temperature approaching setpoint, maintenance due, sensor degraded, tank level low but not critical.
+B. Process Flow (Galvanizing Specific)
+For the dipping line, use color to distinguish the chemical stages visually.
+
+Element	Color	HEX	Usage
+Acid/Chemical	Caution Orange	#F26522	Degreasing tanks, acid baths, flux tanks. (High risk areas).
+Zinc Bath (Molten)	Magma / Hot	#FF6600 to #FF3300	Gradient or pure orange/red. Indicates high temperature (450°C+). Use this for the kettle icon.
+Cooling / Quench	Process Blue	#0085CA	Water quenching tanks, cooling towers.
+Material Flow	Conveyor Gray	#BCBEC0	Raw steel, finished product, hooks, jibs.
+4. Alarm & Banner Colors
+In Codesys Visualization, the alarm table and banner must be instantly recognizable from a distance.
+
+Severity	Color	HEX	Text Color	Usage
+Emergency	Red	#E30613	White	Machine stopped, safety circuit open.
+High	Orange	#F15A24	White	Temperature critical, tank level empty.
+Medium	Yellow	#FFC60B	Black	Maintenance due, filter clogged, minor deviation.
+Low/Info	Blue	#0071BC	White	Pump switched to manual, cycle completed, operator action required.
+5. Implementation Tips for Codesys
+When setting up your Codesys Visualization Manager or Styles, follow these rules to maintain the "Professional Industrial" look:
+
+Fonts: Use Arial, Segoe UI, or Tahoma. Keep them Bold for numeric values. Do not use serif fonts.
+
+Contrast Ratio: Ensure the contrast between text and background is at least 4.5:1. The suggested Dark Concrete (#1E1E1E) with White text (#FFFFFF) has a ratio of ~15:1, which is excellent for factory floor glare.
+
+Touch Targets: If using a touch panel, keep buttons large. Use the Surface (Elevated) color for default buttons and Corporate Blue for primary actions (e.g., "Start Cycle").
+
+Animation: Use Signal Yellow for blinking only for "Unacknowledged Alarms" or "Ready to Start." Avoid blinking for normal operations.
+
+Summary Palette (Quick Reference for Codesys Tagging)
+Background: 1E1E1E
+
+Panel: 2D2D2D
+
+Primary Accent (Header/Active): 0066B3
+
+Secondary Accent (Active Menu/Warning): E6B422
+
+Status OK: 00A651
+
+Status Fault: E30613
+
+Status Warning: FFD100
+
+Process (Zinc Kettle): FF6600
+
+Process (Acid): F26522
+
+Process (Water): 0085CA
